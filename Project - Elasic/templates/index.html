@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>Starter Page</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <link rel="stylesheet" href="./static/css/styleforstarter.css">
+        </head>
+            
+        <body>
+            <header class ="header">
+                <a href=""><img src="./static/img/Logo_DriveSound-01.png" width="100px"></a>
+            </header>
+           
+            <div class="container">
+                <div class = "title">
+                    <h1>Drive sound</h1>
+                    <p>Website documentary music <br><br>You can create your music history and review some song.</p>
+                </div>
+                
+                <div class ="input"  method="GET" action="{{ url_for('search') }}">
+                    <form class="col-md-6 offset-md-3 text-center" method="GET" action="{{ url_for('search') }}">
+                        <input class="searchInput" id="search_song" type="text" name="keyword" style="display: inline;" placeholder="Search Music" required>
+                        <br><br><br>
+                        <button type="submit" class="button" >Search</button>
+                    </form> 
+                </div>
+            </div>
+                
+        </body>
+    
+
+
+    </html>

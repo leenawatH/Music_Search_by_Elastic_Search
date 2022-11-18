@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result Page</title>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./static/css/styleforresult.css"> 
+    
+</head>
+
+<body>
+<header class ="header" id ="head">
+    
+    </header>
+    <div class ="container">
+        {% for doc in hits %} 
+        <div class="row">
+            <div class="column-left">
+                <div class="card">
+                    <div class ="img-cover">
+                        <br>
+                        <img id = "cover" src = "{{ doc['url'] }}" width="100%" style = "width: 180px;" height="auto">
+                    </div>
+                </div>
+            </div>
+            <div class="column-mid">
+                <div class="card">
+                    <h1 id ="name">{{ doc['name'] }}</h1>
+                    <hr>
+                    <p>Produced on {{ doc['releaseDate'] }}</p>
+                    <p>Rating : &#11088;&#11088;&#11088;&#11088; (140) </p>
+                    <div id =" element">
+                        <p id="brand" style="display: inline;">Brand/Artist :</p>
+                        <p class = "artisit/brand" id = "brand_name" style="display: inline;" >{{ doc['artist/brand'] }}</p> 
+                    </div>
+                    <hr>
+                     </div>
+                     <div class = "container_bot">
+                        <div id ="detail_section">
+                            <h2>Lyric</h2>
+                            <p>
+                                <br><a id = "detail" >{{ doc['lyrics'] }}</a>
+                                <br><hr>
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <div class="column-right">
+                <div class="card">
+                    <li><a id = "listened" onClick = "clicklistened()"style="cursor:pointer">Listened</a></li><br>
+                    <li><a id = "like" onClick = "clicklike()" style="cursor:pointer">Like</a></li><br>
+                    <li><a id = "add" onClick = "clickadd()" style="cursor:pointer">Add to List</a></li>
+                </div>
+               
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
+</html>
